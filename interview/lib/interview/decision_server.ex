@@ -34,7 +34,7 @@ defmodule Interview.DecisionServer do
   end
 
   def handle_call({:vote, vote}, _from, decision) do
-    updated_decision = Interview.Decision.vote(vote, decision)
+    updated_decision = Interview.Decision.vote(decision, vote)
 
     {:reply, updated_decision, updated_decision, @timeout}
   end
